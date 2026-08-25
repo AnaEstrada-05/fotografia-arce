@@ -1,0 +1,114 @@
+.services-group__title {
+  margin-bottom: var(--space-4);
+}
+
+.services-group__grid {
+  display: grid;
+  gap: var(--space-3);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 720px) {
+  .services-group__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.price-card {
+  position: relative;
+  border: 1px solid var(--color-hueso-line);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: 0.7em;
+  height: 100%;
+}
+
+.on-carbon .price-card {
+  border-color: var(--color-carbon-line);
+}
+
+.price-card--highlight {
+  border-color: var(--color-amber);
+}
+
+.price-card__tag {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateY(-50%);
+  background: var(--color-amber);
+  color: var(--color-carbon);
+  font-size: var(--fs-micro);
+  letter-spacing: 0.08em;
+  padding: 0.3em 0.7em;
+}
+
+.price-card__price {
+  color: var(--color-amber);
+  font-size: var(--fs-h3);
+}
+
+.price-card__facts {
+  display: grid;
+  gap: 0.5em;
+  margin: 0.3em 0;
+  padding-top: 0.7em;
+  border-top: 1px solid currentColor;
+  opacity: 0.95;
+}
+
+.price-card__facts > div {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-2);
+  font-size: var(--fs-small);
+}
+
+.price-card__facts dt {
+  color: var(--color-bronze);
+}
+
+.price-card__facts dd {
+  margin: 0;
+  text-align: right;
+}
+
+.price-card__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45em;
+  font-size: var(--fs-small);
+  flex-grow: 1;
+}
+
+.on-hueso .price-card__list {
+  color: var(--color-stone);
+}
+
+.on-carbon .price-card__list {
+  color: var(--color-ash);
+}
+
+.price-card__list li::before {
+  content: "— ";
+  color: var(--color-bronze);
+}
+
+.price-card__cta {
+  margin-top: var(--space-2);
+  align-self: flex-start;
+  color: var(--color-carbon);
+}
+
+.services-note__inner {
+  max-width: 56ch;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.services-note__inner .btn {
+  align-self: flex-start;
+  margin-top: var(--space-1);
+}

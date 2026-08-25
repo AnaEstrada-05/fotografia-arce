@@ -1,0 +1,66 @@
+/* ============================================================
+   FOTOGRAFÍA ARCE — Design Tokens
+   El sistema deriva del nombre: Arce (maple). El anillo de
+   crecimiento es el motivo estructural silencioso de la marca.
+   ============================================================ */
+
+:root {
+  /* ---- Color: Carbón / Hueso / Savia ---- */
+  --color-carbon: #14120f;
+  --color-carbon-raised: #1c1914;
+  --color-carbon-line: #2c2820;
+
+  --color-hueso: #f6f1e7;
+  --color-hueso-raised: #efe8d9;
+  --color-hueso-line: #ddd3bd;
+
+  --color-amber: #c97a3d;
+  --color-amber-strong: #e08c47;
+  --color-amber-dim: #8a5228;
+
+  --color-bronze: #8a6a4e;
+
+  --color-stone: #6b665e;   /* texto secundario sobre hueso */
+  --color-ash: #b8b2a6;     /* texto secundario sobre carbón */
+
+  --color-success: #7a8f5c;
+  --color-error: #b5502f;
+
+  /* ---- Type families ---- */
+  --font-display: "Bodoni Moda", "Didot", "Bodoni MT", Georgia, serif;
+  --font-body: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+
+  /* ---- Type scale (fluid) ---- */
+  --fs-hero: clamp(3.4rem, 3rem + 6vw, 9.5rem);
+  --fs-display-1: clamp(2.4rem, 2rem + 3.4vw, 5.6rem);
+  --fs-display-2: clamp(1.9rem, 1.6rem + 2vw, 3.4rem);
+  --fs-h3: clamp(1.4rem, 1.25rem + 1vw, 2rem);
+  --fs-body-lg: clamp(1.125rem, 1.05rem + 0.4vw, 1.375rem);
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+  --fs-micro: 0.75rem;
+
+  /* ---- Spacing ---- */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2.5rem;
+  --space-5: 4rem;
+  --space-6: 6.5rem;
+  --space-7: 10rem;
+
+  --gutter: clamp(1.25rem, 1rem + 2vw, 3rem);
+  --max-width: 1680px;
+
+  /* ---- Motion ---- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 0.3s;
+  --dur-med: 0.6s;
+  --dur-slow: 1s;
+
+  /* ---- Misc ---- */
+  --hairline: 1px;
+  --radius: 2px;
+}

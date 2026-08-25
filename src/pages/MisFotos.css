@@ -1,0 +1,252 @@
+.portal {
+  min-height: 100svh;
+  padding-top: calc(84px + var(--space-5));
+  padding-bottom: var(--space-6);
+  display: flex;
+  align-items: flex-start;
+}
+
+.portal__inner {
+  width: 100%;
+}
+
+.portal__title {
+  margin-top: var(--space-2);
+}
+
+.portal__sub {
+  margin-top: var(--space-2);
+  color: var(--color-ash);
+  max-width: 52ch;
+}
+
+.portal__form-wrap {
+  margin-top: var(--space-5);
+  max-width: 640px;
+}
+
+.portal__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+@media (min-width: 640px) {
+  .portal__form {
+    flex-direction: row;
+    align-items: stretch;
+  }
+}
+
+.portal__field {
+  position: relative;
+  flex-grow: 1;
+}
+
+.portal__field input {
+  width: 100%;
+  background: transparent;
+  border: 1px solid var(--color-bronze);
+  color: var(--color-hueso);
+  font-family: var(--font-mono);
+  font-size: var(--fs-body-lg);
+  letter-spacing: 0.04em;
+  padding: 0.9em 3em 0.9em 1em;
+  transition: border-color var(--dur-fast) var(--ease-out);
+}
+
+.portal__field input::placeholder {
+  color: var(--color-stone);
+  font-size: 0.7em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.portal__field input:focus {
+  border-color: var(--color-amber);
+}
+
+.portal__field--error input {
+  border-color: var(--color-error);
+}
+
+.portal__field-ring {
+  position: absolute;
+  right: 0.9em;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--dur-fast) var(--ease-out);
+}
+
+.portal__field input:focus ~ .portal__field-ring {
+  opacity: 1;
+}
+
+.portal__submit {
+  color: var(--color-carbon);
+  flex-shrink: 0;
+}
+
+.portal__submit:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+
+.portal__error {
+  margin-top: var(--space-2);
+  color: var(--color-error);
+  font-size: var(--fs-small);
+  max-width: 46ch;
+}
+
+.portal__hint {
+  margin-top: var(--space-4);
+  color: var(--color-stone);
+  font-size: var(--fs-micro);
+  letter-spacing: 0.04em;
+}
+
+/* ---- estado: expirado ---- */
+.portal__status {
+  margin-top: var(--space-5);
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.portal__status p {
+  color: var(--color-ash);
+}
+
+.portal__status-actions {
+  margin-top: var(--space-2);
+  display: flex;
+  gap: var(--space-2);
+  color: var(--color-hueso);
+  flex-wrap: wrap;
+}
+
+/* ---- estado: éxito / galería ---- */
+.portal__gallery {
+  margin-top: var(--space-4);
+}
+
+.portal__gallery-head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-carbon-line);
+  margin-bottom: var(--space-4);
+}
+
+@media (min-width: 860px) {
+  .portal__gallery-head {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+}
+
+.portal__gallery-title {
+  margin-top: var(--space-1);
+}
+
+.portal__gallery-meta {
+  margin-top: var(--space-2);
+  color: var(--color-bronze);
+  font-size: var(--fs-small);
+}
+
+.portal__gallery-actions {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  color: var(--color-carbon);
+  flex-shrink: 0;
+}
+
+.portal__gallery-actions .btn--ghost {
+  color: var(--color-hueso);
+}
+
+.portal__grid {
+  columns: 1;
+  column-gap: var(--space-3);
+}
+
+@media (min-width: 640px) {
+  .portal__grid {
+    columns: 2;
+  }
+}
+
+@media (min-width: 1080px) {
+  .portal__grid {
+    columns: 3;
+  }
+}
+
+.portal__photo {
+  position: relative;
+  break-inside: avoid;
+  margin-bottom: var(--space-3);
+  overflow: hidden;
+}
+
+.portal__photo-view {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: var(--color-carbon-line);
+  cursor: pointer;
+}
+
+.portal__photo-view img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--dur-med) var(--ease-out);
+}
+
+.portal__photo:hover .portal__photo-view img {
+  transform: scale(1.035);
+}
+
+.portal__photo--portrait img {
+  aspect-ratio: 3 / 4;
+}
+
+.portal__photo--landscape img {
+  aspect-ratio: 4 / 3;
+}
+
+.portal__photo-download {
+  position: absolute;
+  top: 0.6em;
+  right: 0.6em;
+  width: 2.2em;
+  height: 2.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(20, 18, 15, 0.75);
+  color: var(--color-hueso);
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity var(--dur-fast) var(--ease-out), background var(--dur-fast) var(--ease-out);
+}
+
+.portal__photo:hover .portal__photo-download,
+.portal__photo-download:focus-visible {
+  opacity: 1;
+}
+
+.portal__photo-download:hover {
+  background: var(--color-amber);
+  color: var(--color-carbon);
+}

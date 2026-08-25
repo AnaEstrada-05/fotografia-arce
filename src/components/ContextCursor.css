@@ -1,0 +1,19 @@
+.context-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  pointer-events: none;
+  transform-origin: center;
+  margin-left: 14px;
+  margin-top: 14px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-carbon);
+  background: var(--color-amber);
+  padding: 0.4em 0.7em;
+  border-radius: 999px;
+  white-space: nowrap;
+}
